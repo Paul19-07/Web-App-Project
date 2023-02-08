@@ -1,0 +1,75 @@
+body {
+    font-size: 16px;
+}
+
+.image-head {
+    /*border: 10px solid blue;*/
+    display: flex;
+    /*align-items: flex-end;*/
+    flex-direction: column;
+    overflow: hidden;
+    width: 100vw;
+    height: 30vh;
+    background-image: url(https://www.tagesspiegel.de/images/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001/alternates/BASE_21_9_W1000/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+.text-head {
+    /*border: 10px solid black;*/
+    display: flex;
+    width: 100vw;
+    height: 23vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: 9vw;
+    /*text-shadow: 2px 2px 4px #333, -2px -2px 4px #333*/
+  }
+
+.nav_menu {
+    /*border: 10px solid violet;*/
+    background-color: #ccc;
+    opacity: 0.7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+  }
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+
+nav li {
+    flex: 1;
+    text-align: center;
+    font-size: 3vh;
+  }
+
+nav a {
+    display: block;
+    padding: 2vh;
+    color: #333;
+    text-decoration: none;
+  }
+
+nav a:hover {
+    background-color: #eee;
+    color: blue;
+  }
+
+#menu_point_1:hover {
+    border-top-left-radius: 10px;
+}
+
+#menu_point_4:hover {
+    border-top-right-radius: 10px;
+}
