@@ -1,5 +1,6 @@
 body {
     font-size: 16px;
+    background-color: rgb(255, 255, 255);
     /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
 }
 
@@ -10,7 +11,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 100vw;
-    height: 30%;
+    height: 25vh;
     background-image: url(https://www.tagesspiegel.de/images/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001/alternates/BASE_21_9_W1000/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -23,12 +24,12 @@ body {
     /*border: 10px solid black;*/
     display: flex;
     width: 100vw;
-    height: 23vh;
+    height: 20vh;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: black;
-    font-size: 9vw;
+    font-size: 7vw;
     font-family: Arial, Helvetica, sans-serif;
     
     text-shadow: 2px 2px 4px #333, -2px -2px 4px #333
@@ -49,12 +50,8 @@ body {
 
 .nav_menu {
     /*border: 10px solid violet;*/
-    background-color: #ccc;
-    opacity: 0.7;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     width: 100vw;
-    height: 7vh;
+    height: 5vh;
     display: flex;
     justify-content: center;
   }
@@ -68,21 +65,24 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
 
 nav li {
     display: flex;
-    width: 25vw;
+    width: 14vw;
     /*border: 10px solid orange;*/
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     font-family: Arial, Helvetica, sans-serif;
   }
 
 nav a {
+    background-color: rgb(115, 117, 122);
+    opacity: 0.8;
     display: flex;
-    width: 25vw;
-    height: 7vh;
+    width: 20vw;
+    height: 5vh;
     color: black;
     text-decoration: none;
     justify-content: center;
@@ -90,12 +90,22 @@ nav a {
   }
 
 nav a:hover {
-    background-color: #eee;
-    color: red;
+    background-color: #858585;
+    color: rgb(0, 0, 0);
   }
+
+#menu_point_1 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 
 #menu_point_1:hover {
     border-top-left-radius: 10px;
+}
+
+#menu_point_4 {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #menu_point_4:hover {
