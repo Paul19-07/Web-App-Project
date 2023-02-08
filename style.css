@@ -1,5 +1,6 @@
 body {
     font-size: 16px;
+    /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
 }
 
 .image-head {
@@ -9,7 +10,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 100vw;
-    height: 30vh;
+    height: 30%;
     background-image: url(https://www.tagesspiegel.de/images/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001/alternates/BASE_21_9_W1000/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -28,8 +29,23 @@ body {
     text-align: center;
     color: black;
     font-size: 9vw;
-    /*text-shadow: 2px 2px 4px #333, -2px -2px 4px #333*/
+    font-family: Arial, Helvetica, sans-serif;
+    
+    text-shadow: 2px 2px 4px #333, -2px -2px 4px #333
   }
+
+.text-head a {
+    text-decoration: none;
+    color: black;
+}
+
+.text-head img {
+    display: flex;
+    border-right: 10vw;
+    margin-right: 1vw;
+    width: 8vw;
+    height: 15vh;
+}
 
 .nav_menu {
     /*border: 10px solid violet;*/
@@ -37,33 +53,45 @@ body {
     opacity: 0.7;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    
+    width: 100vw;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
   }
 
 nav ul {
+    display: flex;
+    /*border: 10px solid black;*/
     list-style: none;
+    width: 100vw;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
   }
 
 
 nav li {
-    flex: 1;
-    text-align: center;
-    font-size: 3vh;
+    display: flex;
+    width: 25vw;
+    /*border: 10px solid orange;*/
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
 nav a {
-    display: block;
-    padding: 2vh;
-    color: #333;
+    display: flex;
+    width: 25vw;
+    height: 7vh;
+    color: black;
     text-decoration: none;
+    justify-content: center;
+    align-items: center;
   }
 
 nav a:hover {
     background-color: #eee;
-    color: blue;
+    color: red;
   }
 
 #menu_point_1:hover {
@@ -72,4 +100,9 @@ nav a:hover {
 
 #menu_point_4:hover {
     border-top-right-radius: 10px;
+}
+
+#introduction {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
