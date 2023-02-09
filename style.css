@@ -5,19 +5,41 @@ body {
 }
 
 .image-head {
-    /*border: 10px solid blue;*/
     display: flex;
     /*align-items: flex-end;*/
     flex-direction: column;
     overflow: hidden;
     width: 100vw;
     height: 25vh;
+    filter: blur(0px);
+  }
+
+.image-head::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(https://www.tagesspiegel.de/images/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001/alternates/BASE_21_9_W1000/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+  }
+
+.top-image {
+  display: flex;
+  border: 10px solid brown;
+    width: 100vw;
+    height: 25vh;
     background-image: url(https://www.tagesspiegel.de/images/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001/alternates/BASE_21_9_W1000/stock-financial-data-material-diagram-publicationxnotxinxchn-616208114890834001.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    filter: blur(10px);
   }
 
 .text-head {
@@ -32,7 +54,8 @@ body {
     font-size: 7vw;
     font-family: Arial, Helvetica, sans-serif;
     
-    text-shadow: 2px 2px 4px #333, -2px -2px 4px #333
+    text-shadow: 2px 2px 4px #333, -2px -2px 4px #333;
+    z-index: 1;
   }
 
 .text-head a {
@@ -71,9 +94,9 @@ nav ul {
 
 nav li {
     display: flex;
-    width: 14vw;
+    width: 12vw;
     /*border: 10px solid orange;*/
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -116,3 +139,41 @@ nav a:hover {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.website-framework {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.left-bar {
+  width: 15vw;
+  height: 100vh;
+  background-color: rgb(78, 78, 78);
+  filter: blur(5px);
+}
+
+.website-middle {
+  display: flex;
+  width: 70vw;
+  height: 100vh;
+  background-color: black;
+  filter: blur(10px);
+  /*background-image: url(https://trading-treff.de/wp-content/uploads/2018/03/Aktienhandel-737x415.jpg);
+  filter: blur(10px);*/
+}
+
+.right-bar {
+  width: 15vw;
+  height: 100vh;
+  background-color: rgb(78, 78, 78);
+  filter: blur(5px);
+}
+
+.grid-test {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: aqua;
+}
+
