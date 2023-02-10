@@ -53,7 +53,7 @@ body {
 
 .text-head img {
     display: flex;
-    filter: invert(85%);
+    filter: invert(80%);
     margin: 2vw;
     width: 5vw;
     height: 10vh;
@@ -103,9 +103,16 @@ nav a {
   }
 
 nav a:hover {
-    background-color: #acacac;
+    background-color: #c7c7c7;
     color: rgb(0, 0, 0);
+    transition: font-size 2s ease;
+    font-size: 1.1vw;
   }
+
+nav a:active {
+  transition: font-size 1s ease;
+  font-size: 1vw;
+}
 
 #menu_point_1 {
     border-top-left-radius: 10px;
@@ -124,6 +131,59 @@ nav a:hover {
 #menu_point_4:hover {
     border-top-right-radius: 10px;
 }
+
+
+
+
+.menu-container {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 10;
+}
+
+.menu-button {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/360px-Hamburger_icon.svg.png);
+  cursor: pointer;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.menu-button i {
+  font-size: 70px;
+}
+
+.menu {
+  position: fixed;
+  top: 150px;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.5s ease-in-out;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.menu a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+
+
+
 
 #introduction {
     font-size: 20px;
