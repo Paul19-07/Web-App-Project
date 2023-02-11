@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     width: 100vw;
-    height: 25vh;
+    height: 310px;
     filter: blur(0px);
   }
 
@@ -35,11 +35,11 @@ body {
     /*border: 10px solid black;*/
     display: flex;
     width: 100vw;
-    height: 20vh;
+    height: 240px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 10em;
+    font-size: 150px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 3px 6px 3px rgba(61,61,61,0),
     3px 5px 2px #474747;
@@ -55,16 +55,13 @@ body {
     display: flex;
     filter: invert(80%);
     margin: 2vw;
-    width: 5vw;
-    height: 10vh;
+    width: 130px;
+    height: 130px;
 }
 
 .nav_menu {
     /*border: 10px solid violet;*/
-    width: 100vw;
-    height: 2vh;
     display: flex;
-    justify-content: center;
   }
 
 nav ul {
@@ -82,9 +79,9 @@ nav ul {
 
 nav li {
     display: flex;
-    width: 12vw;
+    width: 300px;
     /*border: 10px solid orange;*/
-    font-size: 1vw;
+    font-size: 26px;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -95,7 +92,7 @@ nav a {
     opacity: 0.8;
     display: flex;
     width: 20vw;
-    height: 4vh;
+    height: 53px;
     color: white;
     text-decoration: none;
     justify-content: center;
@@ -179,6 +176,7 @@ nav a:active {
   margin-bottom: 10px;
   font-size: 18px;
   color: #333;
+  background-color: transparent;
 }
 
 
@@ -196,15 +194,16 @@ nav a:active {
     width: 100vw;
 }
 
-.left-bar {
+.left-right-bar {
   width: 15vw;
   height: 100vh;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(255, 255, 255);
   filter: blur(10px);
 }
 
 .website-middle {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   width: 70vw;
   height: 100vh;
@@ -233,11 +232,9 @@ nav a:active {
 }
 */
 
-.right-bar {
-  width: 15vw;
-  height: 100vh;
-  background-color: rgb(200, 200, 200);
-  filter: blur(10px);
+#aktienchart-example {
+  height: 100px;
+  width: 200px;
 }
 
 .grid-test {

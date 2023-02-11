@@ -15,24 +15,3 @@ document2.addEventListener("click", function() {
     isMenuOpen = !isMenuOpen;
     }
 });
-
-
-
-/*
-var menuToggleButton = document.querySelector(".menu-button");
-var menuContainer = document.querySelector(".menu");
-var isMenuOpen = false;
-
-menuToggleButton.addEventListener("click", function() {
-    isMenuOpen = !isMenuOpen;
-    menuContainer.style.display = isMenuOpen ? "block" : "none";
-  });
-
-
-  document.addEventListener("click", function(event) {
-    if (isMenuOpen && event.target !== menuButton && menu.contains(event.target)) {
-      isMenuOpen = false;
-      menu.classList.toggle("open");
-    }
-  });
-*/
