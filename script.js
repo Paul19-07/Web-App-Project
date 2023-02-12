@@ -15,3 +15,11 @@ document2.addEventListener("click", function() {
     isMenuOpen = !isMenuOpen;
     }
 });
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("scrolldown-menu").style.top = "50";
+  } else {
+    document.getElementById("scrolldown-menu").style.top = "30px";
+  }
+}
