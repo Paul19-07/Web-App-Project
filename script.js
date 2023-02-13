@@ -2,7 +2,8 @@ const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
 const isMenuOpen = false;
 const document2 = document.querySelector("#root");
-
+const scrolldownConatiner = document.getElementById("scrolldown-menu-container")
+const scrolldownNavbar = document.getElementById("scrolldown-menu-navbar")
 
 menuButton.addEventListener("click", () => {
   menu.classList.toggle("open");
@@ -17,9 +18,33 @@ document2.addEventListener("click", function() {
 });
 
 window.onscroll = function() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("scrolldown-menu").style.top = "50";
+  const fontSize = parseFloat(getComputedStyle(document.body).fontSize);
+  const screenWidth = window.innerWidth / fontSize;
+  let threshold;
+
+  switch (true) {
+    case screenWidth >= 100:
+      threshold = 320;
+      break;
+    case screenWidth >= 80:
+      threshold = 250;
+      break;
+    case screenWidth >= 60:
+      threshold = 220;
+      break;
+    case screenWidth >= 50:
+      threshold = 190;
+      break;
+    case screenWidth >= 20:
+      threshold = 0;
+      break;
+    default:
+      threshold = 0;
+  }
+
+  if (window.pageYOffset > threshold) {
+    scrolldownConatiner.classList.add("open");
   } else {
-    document.getElementById("scrolldown-menu").style.top = "30px";
+    scrolldownConatiner.classList.remove("open");
   }
 }

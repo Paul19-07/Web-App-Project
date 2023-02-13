@@ -2,8 +2,13 @@
   body {
     font-size: 16px;
     height: 2000px;
+    width: 100vw;
     background-color: rgb(255, 255, 255);
     /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
+  }
+
+  #scrolldown-menu-container {
+    display: none;
   }
 
   header {
@@ -40,20 +45,20 @@
   z-index: -1;
   }
   
-  .text-head {
-    margin-left: 10px;
-    display: flex;
-    width: 100vw;
-    height: 2em;
-    align-items: center;
-    justify-content: start;
-    text-align: center;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 3px 6px 3px rgba(61,61,61,0),
-    3px 5px 2px #474747;
-    z-index: 1;
-  }
+.text-head {
+  margin-left: 10px;
+  display: flex;
+  width: 100vw;
+  height: 2em;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 3px 6px 3px rgba(61,61,61,0),
+  3px 5px 2px #474747;
+  z-index: 1;
+}
   
   .text-head a {
     text-decoration: none;
@@ -277,11 +282,62 @@
 @media only screen and (min-width: 50em) {
   body {
     border: 10px solid blue;
+  }
+
+  #scrolldown-menu-container {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.5s ease-in-out;
+    z-index: 5;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #scrolldown-menu-container.open {
+    top: 0;
+  }
+  
+  #scrolldown-menu-navbar {
+    display: flex;
+  }
+  
+  #scrolldown-menu-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  #scrolldown-menu-navbar li {
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+  
+  #scrolldown-menu-navbar a {
+    text-decoration: none;
+    color: black;
     font-size: 16px;
-    width: 100vw;
-    height: 2000px;
-    background-color: rgb(255, 255, 255);
-    /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
+  }
+  
+  #scrolldown-menu-logo-name {
+    /*text-shadow: 3px 6px 3px rgba(61,61,61,0),
+    3px 5px 2px #474747;*/
+    color: rgb(99, 99, 99);
+    margin-right: 5vw;
+  }
+  
+  #scrolldown-menu-logo-image {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
   }
 
   header {
@@ -550,11 +606,6 @@
 @media only screen and (min-width: 60em) {
   body {
     border: 10px solid green;
-    font-size: 16px;
-    width: 100vw;
-    height: 2000px;
-    background-color: rgb(255, 255, 255);
-    /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
   }
 
   header {
@@ -823,11 +874,6 @@
 @media only screen and (min-width: 80em) {
   body {
     border: 10px solid purple;
-    font-size: 16px;
-    width: 100vw;
-    height: 2000px;
-    background-color: rgb(255, 255, 255);
-    /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
   }
 
   header {
@@ -1057,24 +1103,6 @@
   filter: blur(10px);*/
   }
   
-  /*
-  .website-middle::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url(https://trading-treff.de/wp-content/uploads/2018/03/Aktienhandel-737x415.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(10px) brightness(50%);
-  z-index: -1;
-  }
-  */
-  
   #aktienchart-example {
   height: 100px;
   width: 200px;
@@ -1102,16 +1130,6 @@
 @media only screen and (min-width: 100em) {
 body {
   border: 10px solid orange;
-  font-size: 16px;
-  background-color: rgb(255, 255, 255);
-  /*background-image: url(https://i.computer-bild.de/imgs/1/4/1/6/2/9/4/7/Value-Aktien.jpeg-c79ad54c3ff44087.jpg?impolicy=full_content);*/
-}
-
-#scrolldown-menu {
-  position: fixed;
-  top: 100px;
-  transition: top 0.5s;
-  z-index: 5;
 }
 
 .image-head {
