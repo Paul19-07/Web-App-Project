@@ -488,6 +488,7 @@
     width: 280px;
     height: 45px;
   }
+
 }
 
 
@@ -500,6 +501,7 @@
 @media only screen and (min-width: 120em) {
 body {
   border: 10px solid orange;
+  background-color: rgb(56, 56, 56);
 }
 
 .image-head {
@@ -535,5 +537,18 @@ body {
 .nav_menu a {
   width: 350px;
   height: 50px;
+}
+
+.website-framework {
+  display: flex;
+  justify-content: center;
+}
+
+.website-middle {
+  text-align: center;
+  display: block;
+  color: white;
+  width: 1200px;
+  border: 5px solid blue;
 }
 }
