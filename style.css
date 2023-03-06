@@ -1,9 +1,9 @@
 @media only screen and (min-width: 20em) {
   body {
     font-size: 16px;
-    height: 2000px;
+    height: 5000px;
     width: 100vw;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(56, 56, 56);
   }
 
   #scrolldown-menu-container {
@@ -140,21 +140,43 @@
   
   .website-framework {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    justify-content: center;
   }
-  
-  
+
   .website-middle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  filter: blur(0px);
-  color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    height: 8000px;
+    /*border: 5px solid blue;*/
+    color: white;
+  }
+
+  .website-middle-startseite {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+  }
+
+  .image-website-middle-startseite {
+    align-items: center;
+    width: 600px;
+    /*border: 5px solid orange;*/
+  }
+
+  .text-website-middle-startseite {
+    text-align: center;
+    width: 600px;
+    /*border: 5px solid yellow;*/
   }
   
+  .image-inside-website-middle-startseite {
+    width: 80%;
+    height: auto;
+  }
   
   #aktienchart-example {
   height: 100px;
@@ -178,6 +200,10 @@
 @media only screen and (min-width: 50em) {
   body {
     border: 10px solid blue;
+  }
+
+  .image-head::before {
+    background-image: linear-gradient(rgba(56,56,56,0.4), rgba(56,56,56,0.4) 98%, rgba(56,56,56,1)), url("https://www.kyriba.com/wp-content/uploads/2022/06/Kyriba_FinancialServices_Intro-900x547.jpg");
   }
 
   #scrolldown-menu-container {
@@ -444,6 +470,11 @@
     width: 260px;
     height: 45px;
   }
+
+  .website-middle {
+    width: 1200px;
+  }
+
 }
 
 
@@ -539,16 +570,4 @@ body {
   height: 50px;
 }
 
-.website-framework {
-  display: flex;
-  justify-content: center;
-}
-
-.website-middle {
-  text-align: center;
-  display: block;
-  color: white;
-  width: 1200px;
-  border: 5px solid blue;
-}
 }
