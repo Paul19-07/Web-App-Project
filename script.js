@@ -48,3 +48,142 @@ window.onscroll = function() {
     scrolldownConatiner.classList.remove("open");
   }
 }
+
+document.addEventListener("DOMContentLoaded",() => {
+
+  document.querySelector("form").onsubmit = () => {
+    const base = document.querySelector("#local_currency").value;
+    fetch(`https://api.exchangerate.host/latest?/source=ecb&base=${base}`)
+    .then((response) => response.json())
+    .then((data) =>  {
+      const amount = document.querySelector("#amount_currency").value;
+      const foreignCurrency = document.querySelector("#foreign_currency").value;
+      const rate = data.rates[foreignCurrency];
+      function convert(){
+        return amount * rate;
+      }
+      document.querySelector("#results").innerHTML=`${amount} ${base.toUpperCase()} equal to ${foreignCurrency} ${convert().toFixed(
+        4
+      )}`;
+    }).catch((error)=>{
+      console.log("Error: ", error);
+    });
+    return false;
+  };
+});
+
+
+document.addEventListener("DOMContentLoaded",() => {
+const exchangeIcon = document.querySelector("#switch_button");
+exchangeIcon.addEventListener("click", () => {
+  switchCurrencies();
+});
+
+function switchCurrencies() {
+  const localCurrency = document.querySelector("#local_currency");
+  const foreignCurrency = document.querySelector("#foreign_currency");
+  const temp = localCurrency.value;
+  localCurrency.value = foreignCurrency.value;
+  foreignCurrency.value = temp;
+  const amount = document.querySelector("#amount_currency");
+  const tempAmount = amount.value;
+  amount.value = "";
+  amount.value = tempAmount;
+};
+});
+
+const dictionary = document.getElementById('dictionary');
+const links = dictionary.querySelectorAll('#alphabet a');
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function(event) {
+    event.preventDefault();
+    const target = document.getElementById(this.getAttribute('href').slice(1));
+    const content = dictionary.querySelector('#content');
+    const offsetTop = target.offsetTop - content.offsetTop;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  });
+}
+
+const termTitles = document.querySelectorAll('.term-title');
+for (let i = 0; i < termTitles.length; i++) {
+  termTitles[i].addEventListener('click', function(event) {
+    event.preventDefault();
+    const termContent = this.nextElementSibling;
+    if (termContent.style.display === 'none') {
+      termContent.style.display = 'block';
+      this.querySelector('span').textContent = '-';
+    } else {
+      termContent.style.display = 'none';
+      this.querySelector('span').textContent = '+';
+    }
+  });
+}
+
+
+
+function filterFunction() {
+  var input, filter, dropdown, options, i, count;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  dropdown = document.getElementById("myDropdown");
+  options = dropdown.getElementsByTagName("option");
+  count = 0;
+  for (i = 0; i < options.length; i++) {
+    if (options[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+      options[i].style.display = "block";
+      count++;
+    } else {
+      options[i].style.display = "none";
+    }
+    if (count >= 5) {
+      break;
+    }
+  }
+  if (count > 0) {
+    dropdown.classList.add("show");
+  } else {
+    dropdown.classList.remove("show");
+  }
+
+  if (input.value === "") {
+    dropdown.classList.remove("show")
+  }
+
+
+}
+
+function setSelectedValue() {
+  var dropdown, selectedValueInput, input;
+  dropdown = document.getElementById("myDropdown");
+  input = document.getElementById("myInput");
+  selectedValueInput = document.getElementById("selectedValue");
+  selectedValueInput.value = dropdown.value;
+  dropdown.classList.remove("show");
+  input.value="";
+
+}
+
+
+
+
+/*
+document.addEventListener("DOMContentLoaded",() => {
+  document.querySelector("form").onsubmit = () => {
+    const localCurrency = document.querySelector("#local_currency").value;
+    const amount = document.querySelector("#amount_currency").value;
+    const foreignCurrency = document.querySelector("#foreign_currency").value;
+
+    fetch(`https://api.exchangerate.host/convert?from=${localCurrency}&to=${foreignCurrency}&amount=${amount}`)
+    .then((response) => response.json())
+    .then((data) =>  {
+      const result = data.result;
+      console.log(result);
+      document.querySelector("#results").innerHTML=`${amount} ${localCurrency} equal to ${foreignCurrency} ${convert().toFixed(4)}`;
+    }).catch((error)=>{
+      console.log("Error: ", error);
+    });
+    return false;
+  };
+});
+*/

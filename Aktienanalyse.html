@@ -8,9 +8,44 @@
         <title>Aktienanalyse</title>
         <link href="style.css" rel="stylesheet"
         type="text/css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/ea9bb8a3f3.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
+        <div id="scrolldown-menu-container">
+            <nav id="scrolldown-menu-navbar">
+                <ul>
+                    <img id="scrolldown-menu-logo-image" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
+                    <li id="scrolldown-menu-logo-name">Aktien-App</li>
+                    <li><a href="Startseite.html">Startseite</a></li>
+                    <li><a href="Aktienanalyse.html">Aktienanalyse</a></li>
+                    <li><a href="Aktienvergleich.html">Aktienvergleich</a></li>
+                    <li><a href="Waehrungsumrechner.html">Währungsumrechner</a></li>
+                    <li><a href="Lernstube.html">Lernstube</a></li>
+                    <li><a href="Langeweile.html">Langeweile?</a></li>
+                </ul>
+            </nav>
+            <nav class="socials-logo-scrolldown-menu">
+                <ul>
+                    <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="Instagram"></a>
+                    <a href="https://twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/81/81609.png" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/"><img src="https://cdn-icons-png.flaticon.com/512/48/48968.png" alt="YouTube"></a>
+                    <a href="https://de.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/49/49656.png" alt="LinkedIn"></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-container">
+            <div class="menu-button">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="menu">
+              <a href="#">Home</a>
+              <a href="#">Über uns</a>
+              <a href="#">Dienstleistungen</a>
+              <a href="#">Kontakt</a>
+            </nav>
+        </div>
         <div id="root">
             <header>
                 <div class="image-head">
@@ -34,9 +69,6 @@
 
             <main>
                 <div class="website-framework">
-                    <div class="left-bar">
-
-                    </div>
 
                     <div class="website-middle">
                         <p id="introduction" align="center">
@@ -45,13 +77,67 @@
                             Zusätzlich dazu können Sie unseren Währungsumrechner benutzen, um alles in Ihre gewünschte Währung umrechnen lassen zu können. <br>
                             Wenn Sie Langeweile haben sollten, hilft vielleicht unser kleines Spiel dagegen. <br><br><br>
                         </p>
+
+                        <div id="container_stock_analysis">
+                            <form action="">
+                                <div id="container_all_dropdown_stock">
+                                    <div class="container_dropdown_stock">
+                                        <div class="flexbox_dropdown_stock">
+                                            <div class="name_dropdown_stock">Zeitraum</div>
+                                            <select name="" class="dropdown_stock" id="stock_range">
+                                                <option value="1d">1 Tag</option>
+                                                <option value="5d">5 Tage</option>
+                                                <option value="1mo">1 Monat</option>
+                                                <option value="3mo">3 Monate</option>
+                                                <option value="6mo">6 Monate</option>
+                                                <option value="1y">1 Jahr</option>
+                                                <option value="2y">2 Jahre</option>
+                                                <option value="5y">5 Jahre</option>
+                                                <option value="10y">10 Jahre</option>
+                                                <option value="ytd">laufendes Jahr</option>
+                                                <option value="max">kompletter Zeitraum</option>
+                                            </select>
+                                        </div>
+                                        <div class="flexbox_dropdown_stock">
+                                            <div class="name_dropdown_stock">Intervall</div>
+                                            <select name="" class="dropdown_stock" id="stock_interval">
+                                                <option value="1m">1 Minute</option>
+                                                <option value="2m">2 Minuten</option>
+                                                <option value="5m">5 Minuten</option>
+                                                <option value="15m">15 Minuten</option>
+                                                <option value="30m">30 Minuten</option>
+                                                <option value="60m">60 Minuten</option>
+                                                <option value="1d">1 Tag</option>
+                                                <option value="1wk">1 Woche</option>
+                                                <option value="1mo">1 Monat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="container_dropdown_stock">
+                                        <div class="name_dropdown_stock">Kürzel der Aktie eingeben oder nach Aktie suchen</div>
+                                    </div>
+                                    <div class="container_dropdown_stock">
+                                        <label for="myDropdown">Auswahlliste:</label>
+                                        <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Suchen...">
+                                        <select id="myDropdown" size="5" onchange="setSelectedValue()">
+                                            <option value="">Bitte wählen...</option>
+                                            <option value="TSLA">Tesla</option>
+                                            <option value="MCR">Microsoft</option>
+                                            <option value="GGL">Google</option>
+                                            <option value="MTA">Meta</option>
+                                            <option value="AMZN">Amazon</option>
+                                        </select>
+                                    <input type="text" id="selectedValue">
+                                    </div>
+                                </div>
+                                <input id="show_stock_chart" type="submit" value="Show Chart"/>
+                            </form>
+                            <div id="stock_chart">Hier befindet sich der Aktienchart</div>
+                        </div>
+
+
                     </div>
 
-                    <div class="right-bar">
-                    </div>
-
-                    <div class="stroke">
-                    </div>
                 </div>
 
                 <div class="footer">
@@ -62,6 +148,7 @@
                 </div>
             </main>
         </div>
+        <script src="script.js"></script>
     </body>
 
 </html>
