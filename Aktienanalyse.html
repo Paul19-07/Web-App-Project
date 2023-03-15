@@ -118,8 +118,8 @@
                                     </div>
                                     <div class="container_dropdown_stock">
                                         <label for="myDropdown">Auswahlliste:</label>
-                                        <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Suchen...">
-                                        <select id="myDropdown" size="5" onchange="setSelectedValue()">
+                                        <input type="text" id="myInput" onkeyup="autoCompletion()"placeholder="Suchen...">
+                                        <select id="myDropdown" size="5" onclick="setSelectedValue()">
                                             <option value="">Bitte wählen...</option>
                                             <option value="TSLA">Tesla</option>
                                             <option value="MCR">Microsoft</option>
@@ -132,8 +132,13 @@
                                 </div>
                                 <input id="show_stock_chart" type="submit" value="Show Chart"/>
                             </form>
+                            <br><br>
+                            <br><br><br>
                             <div id="stock_chart">Hier befindet sich der Aktienchart</div>
                         </div>
+                        <div id="canvas_stock_flexbox">
+                            <canvas id="stock_chart_canvas" width="1200" height="900"></canvas>
+                            </div>
 
 
                     </div>
@@ -142,8 +147,6 @@
 
                 <div class="footer">
 
-                </div>
-                <div class="grid-test">
                     <div id="box1"></div>
                 </div>
             </main>

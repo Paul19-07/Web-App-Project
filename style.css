@@ -169,7 +169,6 @@
     align-items: center;
     justify-content: center;
     width: 600px;
-    border: 10px solid black;
     /*border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)) 30 round;*/
   
     /*border: 5px solid orange;*/
@@ -179,8 +178,9 @@
     text-align: start;
     justify-content: center;
     width: 600px;
-    border: 5px solid yellow;
     font-size: 20px;
+    line-height: 1.8;
+    color: #ccc;
   }
   
   .image-inside-website-middle-startseite {
@@ -422,9 +422,20 @@
   }
 
   canvas {
-    height: 500px;
-    width: 1000px;
-    border: 1px solid #ccc
+    height: 600px;
+    width: 600px;
+    border: 1px solid #ccc;
+  }
+
+  #snake_flexbox {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    width: 1200px;
+  }
+
+  #highscore {
+    font-size: 30px;
   }
 
   #conatiner_stock_analysis {
@@ -451,13 +462,25 @@
 
 
   #myDropdown {
-    display: none;
+    display: block;
   }
 
   #myDropdown.show {
     display: block;
   }
 
+  #canvas_stock_flexbox {
+    display: flex;
+    height: 700px;
+    width: 1200px;
+  }
+
+  #stock_chart_canvas {
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+  }
+  
 
 }
 

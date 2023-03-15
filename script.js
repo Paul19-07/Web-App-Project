@@ -167,7 +167,7 @@ function setSelectedValue() {
 
 
 
-/*
+
 document.addEventListener("DOMContentLoaded",() => {
   document.querySelector("form").onsubmit = () => {
     const localCurrency = document.querySelector("#local_currency").value;
@@ -186,4 +186,60 @@ document.addEventListener("DOMContentLoaded",() => {
     return false;
   };
 });
-*/
+
+
+
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '3ebe14fa2amsh6da3e8b7880403ep11dbd6jsnbcc1654175ab',
+		'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
+	}
+};
+
+const inputElement = document.getElementById("")
+
+function processResults(response) {
+  var result = ""
+  response.quotes.forEach(quote => {
+
+      result += '<option value="' + quote.symbol + '">' + quote.shortname + '</option>'
+    }
+  );
+  document.getElementById("myDropdown").innerHTML = result
+}
+
+function autoCompletion() {
+  const options2 = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '3ebe14fa2amsh6da3e8b7880403ep11dbd6jsnbcc1654175ab',
+      'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
+    }
+  };
+input = document.getElementById("myInput").value;
+document.getElementById("myDropdown").innerHTML = '<option disabled>Lädt...</option>'
+
+fetch(`https://yh-finance.p.rapidapi.com/auto-complete?q=${input}`, options2)
+	.then(response => response.json())
+	.then(response => processResults(response))
+	.catch(err => console.error(err));
+
+}
+
+window.onload = function() {
+var canvas = document.getElementById("stock_chart_canvas");
+var ctx = canvas.getContext("2d");
+
+var canvasWidth = canvas.offsetWidth;
+var canvasHeight = canvas.offsetHeight;
+
+var x = canvasWidth * 0.5;
+
+ctx.beginPath();
+ctx.strokeStyle = "yellow";
+ctx.moveTo(0, 0);
+ctx.lineTo(canvasWidth, canvasHeight);
+ctx.stroke();
+}
