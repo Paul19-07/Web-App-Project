@@ -44,8 +44,11 @@ function setSelectedValue() {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '3ebe14fa2amsh6da3e8b7880403ep11dbd6jsnbcc1654175ab',
-		'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
+    'X-RapidAPI-Key': 'fde7b0ebc5msh853c0ef5e41b90cp1233b7jsnbe81d2d2ceb5',
+    'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+    "useQueryString": true,
+    "Content-Type": "application/json",
+    "Accept": "application/json"
 	}
 };
 
@@ -65,8 +68,11 @@ function autoCompletion() {
   const options2 = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '3ebe14fa2amsh6da3e8b7880403ep11dbd6jsnbcc1654175ab',
-      'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
+      'X-RapidAPI-Key': 'fde7b0ebc5msh853c0ef5e41b90cp1233b7jsnbe81d2d2ceb5',
+      'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+      "useQueryString": true,
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     }
   };
 input = document.getElementById("myInput").value;
@@ -92,6 +98,8 @@ document.querySelector("form").onsubmit = () => {
 
   var canvas = document.getElementById("stock_chart_canvas");
   var ctx = canvas.getContext("2d");
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   var stockSymbol = document.getElementById("selectedValue").value;
   console.log(stockSymbol)
@@ -157,6 +165,9 @@ for (i = 0.07; i < 0.87; i += 0.08) {
 fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}&symbol=${stockSymbol}&range=${range}&region=US&includePrePost=false&useYfid=true&includeAdjustedClose=true&events=capitalGain%2Cdiv%2Csplit`, options)
 	.then(response => response.json())
   .then((response) =>  { 
+
+    var newStockSymbol = response.chart.result[0].meta.symbol
+
     var timestamps = response.chart.result[0].timestamp;
     console.log(timestamps)
 
@@ -230,7 +241,7 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
 
       ctx.font = "10px Arial";
       ctx.fillStyle = "white";
-      ctx.fillText(currentPrize, 0.94 * canvasWidth, yAxisPosition * canvasHeight);
+      ctx.fillText(currentPrize + "$", 0.94 * canvasWidth, yAxisPosition * canvasHeight);
 
       yAxisPosition -= 0.08
 
@@ -278,6 +289,20 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
 
     }
     ctx.closePath();
+
+
+    fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-options?symbol=${newStockSymbol}`, options)
+    .then(response => response.json())
+    .then((response) => {
+      var obj = response.optionChain.result[0].quote.shortName
+      console.log(obj)
+    
+
+    ctx.font = "15px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText(obj, 0.03 * canvasWidth, 0.05 * canvasHeight);
+
+    })
 
     console.log(highPrize)
 
