@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded",() => {
       function convert(){
         return amount * rate;
       }
-      document.querySelector("#results").innerHTML=`${amount} ${base.toUpperCase()} equal to ${foreignCurrency} ${convert().toFixed(
-        4
+      document.querySelector("#results").innerHTML=`${amount} ${base.toUpperCase()} ≙ ${foreignCurrency} ${convert().toFixed(
+        2
       )}`;
     }).catch((error)=>{
       console.log("Error: ", error);

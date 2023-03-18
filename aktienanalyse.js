@@ -12,14 +12,12 @@ function filterFunction() {
     } else {
       options[i].style.display = "none";
     }
-    if (count >= 5) {
-      break;
-    }
+
   }
   if (count > 0) {
     dropdown.classList.add("show");
-  } else {
-    dropdown.classList.remove("show");
+  } else if (count === 0) {
+    dropdown.innerHTML = '<option disabled>Lädt...</option>'
   }
 
   if (input.value === "") {
@@ -65,6 +63,8 @@ function processResults(response) {
 }
 
 function autoCompletion() {
+
+
   const options2 = {
     method: 'GET',
     headers: {
@@ -82,6 +82,10 @@ fetch(`https://yh-finance.p.rapidapi.com/auto-complete?q=${input}`, options2)
 	.then(response => response.json())
 	.then(response => processResults(response))
 	.catch(err => console.error(err));
+
+  filterFunction()
+
+
 
 }
 
@@ -110,7 +114,7 @@ document.querySelector("form").onsubmit = () => {
   var interval = ""
 
   if (range === "1d") {
-    interval = "5m";
+    interval = "1m";
   } else if (range === "5d") {
     interval = "30m";
   } else if (range === "1mo") {
@@ -181,8 +185,8 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
 
     var timePerStamp = (timeBetween / 9).toFixed(0)
     timePerStamp = Number(timePerStamp)
-    console.log(typeof timePerStamp + "djifsd")
-    console.log(typeof timeBetween + "ich bin behindert")
+    console.log(typeof timePerStamp)
+    console.log(typeof timeBetween)
 
     var xAxisPosition = 0.01
     var counter1 = 0
@@ -196,13 +200,24 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
       currentTimestamp = new Date(currentTimestamp);
       let year = currentTimestamp.getFullYear();
       let month = currentTimestamp.getMonth();
+      month = month + 1
       let day = currentTimestamp.getDate();
+      let hour = currentTimestamp.getHours();
+      let minute = currentTimestamp.getMinutes();
+
+      if (minute < 10) {
+        minute = minute.toString();
+        minute = `0${minute}`;
+      }
+
 
       timeToPrint = `${day}.${month}.${year}`
+      clockTimeToPrint = `${hour}:${minute}`
 
       ctx.font = "10px Arial";
       ctx.fillStyle = "white";
       ctx.fillText(timeToPrint, xAxisPosition * canvasWidth, 0.9 * canvasHeight);
+      ctx.fillText(clockTimeToPrint, (xAxisPosition + 0.01) * canvasWidth, 0.92 * canvasHeight);
       xAxisPosition += 0.1
       console.log(i)
 
@@ -212,6 +227,10 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
 
     var highPrize = response.chart.result[0].indicators.quote[0].high;
     console.log(highPrize)
+
+    highPrize = highPrize.filter(element => {
+      return element !== null;
+    })
 
     var highestPrize = Math.max(...highPrize);
     var lowestPrize = Math.min(...highPrize);
@@ -256,6 +275,12 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
     ctx.beginPath();
     for (i = 0; i <= highPrize.length; i++) {
 
+      if (highPrize[i] === null) {
+        ctx.arc( xValue * canvasWidth, prizePercentage * canvasHeight, 0, 0, 0, false);
+        xValue += progressPerPoint;
+      }
+
+      else {
       var prize = highPrize[i] 
       prize = prize - lowestPrize
       var prizeDifference = highestPrize - lowestPrize 
@@ -276,7 +301,7 @@ fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=${interval}
       console.log(prizePercentage + " tütütü")
 
       xValue += progressPerPoint;
-
+      }
 
       /* 0.07 bis 0.79 auf der y-Achse
         es wird um 0.72 fortgeschritten und muss in gleichmäßige Teile aufgeteilt werden

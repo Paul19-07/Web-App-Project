@@ -71,12 +71,14 @@
                 <div class="website-framework">
 
                     <div class="website-middle">
-                        <p id="introduction" align="center">
-                            Herzlich willkommen auf unserer Website! <br> 
+                        <div id="introduction" align="center">
+                            <h1>Aktienanalyse</h1> <br> 
+                            <hr><br>
                             Hier können Sie Aktien ansehen, sie miteinander vergleichen und auswerten. <br>
                             Zusätzlich dazu können Sie unseren Währungsumrechner benutzen, um alles in Ihre gewünschte Währung umrechnen lassen zu können. <br>
-                            Wenn Sie Langeweile haben sollten, hilft vielleicht unser kleines Spiel dagegen. <br>
-                        </p>
+                            Wenn Sie Langeweile haben sollten, hilft vielleicht unser kleines Spiel dagegen. <br><br>
+                            <hr><br><br>
+                        </div>
 
                         <div id="container_stock_analysis">
                             <form action="">
@@ -100,24 +102,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <br><br>
+                                    <br><br><br><br>
                                     <div class="container_dropdown_stock">
                                         <div class="name_dropdown_stock">Kürzel der Aktie eingeben oder nach Aktie suchen</div>
                                     </div>
+                                    <br><br>
                                     <div class="container_dropdown_stock">
-                                        <label for="myDropdown">Auswahlliste:</label>
-                                        <input type="text" id="myInput" onkeyup="autoCompletion()"placeholder="Suchen...">
-                                        <select id="myDropdown" size="5" onclick="setSelectedValue()">
- 
-                                        </select>
-                                    <input type="text" id="selectedValue">
+                                        <div class="container2_dropdown_stock">
+                                            <div class="name_dropdown_stock">Aktie suchen:</div>
+                                            <input type="text" id="myInput" onkeyup="autoCompletion()" placeholder="Suchen...">
+                                            <select id="myDropdown" size="5" onclick="setSelectedValue()">
+                                            </select>
+                                        </div>
+                                        <div class="container2_dropdown_stock">
+                                            <div class="name_dropdown_stock">Kürzel eingeben:</div>
+                                            <input type="text" id="selectedValue">
+                                        </div>
                                     </div>
                                 </div>
                                 <input id="show_stock_chart" type="submit" value="Show Chart"/>
                             </form>
                             <br><br>
-                            <br><br><br>
-                            <div id="stock_chart">Hier befindet sich der Aktienchart</div>
+                            <br><br>
                         </div>
                         <canvas id="stock_chart_canvas" width="1200" height="700"></canvas>
 
