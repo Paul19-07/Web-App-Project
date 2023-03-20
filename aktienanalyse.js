@@ -42,11 +42,8 @@ function setSelectedValue() {
 const options = {
 	method: 'GET',
 	headers: {
-    'X-RapidAPI-Key': 'fde7b0ebc5msh853c0ef5e41b90cp1233b7jsnbe81d2d2ceb5',
-    'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-    "useQueryString": true,
-    "Content-Type": "application/json",
-    "Accept": "application/json"
+    'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
+    'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
 	}
 };
 
@@ -68,11 +65,8 @@ function autoCompletion() {
   const options2 = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'fde7b0ebc5msh853c0ef5e41b90cp1233b7jsnbe81d2d2ceb5',
-      'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-      "useQueryString": true,
-      "Content-Type": "application/json",
-      "Accept": "application/json"
+      'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
+      'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
     }
   };
 input = document.getElementById("myInput").value;

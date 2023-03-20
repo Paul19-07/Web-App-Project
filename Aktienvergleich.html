@@ -1,154 +1,208 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport"
-        content="width=device-width">
-        <title>Aktienvergleich</title>
-        <link href="style.css" rel="stylesheet"
-        type="text/css" />
-    </head>
 
-    <body>
-        <div id="scrolldown-menu-container">
-            <nav id="scrolldown-menu-navbar">
-                <ul>
-                    <img id="scrolldown-menu-logo-image" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
-                    <li id="scrolldown-menu-logo-name">Aktien-App</li>
-                    <li><a href="Startseite.html">Startseite</a></li>
-                    <li><a href="Aktienanalyse.html">Aktienanalyse</a></li>
-                    <li><a href="Aktienvergleich.html">Aktienvergleich</a></li>
-                    <li><a href="Waehrungsumrechner.html">Währungsumrechner</a></li>
-                    <li><a href="Lernstube.html">Lernstube</a></li>
-                    <li><a href="Langeweile.html">Langeweile?</a></li>
-                </ul>
-            </nav>
-            <nav class="socials-logo-scrolldown-menu">
-                <ul>
-                    <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="Instagram"></a>
-                    <a href="https://twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/81/81609.png" alt="Twitter"></a>
-                    <a href="https://www.youtube.com/"><img src="https://cdn-icons-png.flaticon.com/512/48/48968.png" alt="YouTube"></a>
-                    <a href="https://de.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/49/49656.png" alt="LinkedIn"></a>
-                </ul>
-            </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>Aktienvergleich</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="scrolldown-menu-container">
+    <nav id="scrolldown-menu-navbar">
+      <ul>
+        <img id="scrolldown-menu-logo-image" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
+        <li id="scrolldown-menu-logo-name">Aktien-App</li>
+        <li><a href="Startseite.html">Startseite</a></li>
+        <li><a href="Aktienanalyse.html">Aktienanalyse</a></li>
+        <li><a href="Aktienvergleich.html">Aktienvergleich</a></li>
+        <li><a href="Waehrungsumrechner.html">Währungsumrechner</a></li>
+        <li><a href="Lernstube.html">Lernstube</a></li>
+        <li><a href="Langeweile.html">Langeweile?</a></li>
+      </ul>
+    </nav>
+    <nav class="socials-logo-scrolldown-menu">
+      <ul>
+        <a href="https://www.instagram.com/"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
+            alt="Instagram"></a>
+        <a href="https://twitter.com/"><img src="https://cdn-icons-png.flaticon.com/512/81/81609.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com/"><img src="https://cdn-icons-png.flaticon.com/512/48/48968.png"
+            alt="YouTube"></a>
+        <a href="https://de.linkedin.com/"><img src="https://cdn-icons-png.flaticon.com/512/49/49656.png"
+            alt="LinkedIn"></a>
+      </ul>
+    </nav>
+  </div>
+  <div class="menu-container">
+    <div class="menu-button">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="menu">
+      <a href="#">Home</a>
+      <a href="#">Über uns</a>
+      <a href="#">Dienstleistungen</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </div>
+  <div id="root">
+    <header>
+      <div class="image-head">
+        <div class="text-head">
+          <img id="logo-head-left" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
+          <div><a href="Startseite.html">Aktien-App</a></div>
+          <img id="logo-head-right" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
         </div>
-        <div class="menu-container">
-            <div class="menu-button">
-                <i class="fas fa-bars"></i>
+        <nav class="nav_menu">
+          <ul>
+            <li><a id="menu_point_1" href="Aktienanalyse.html">Aktienanalyse</a></li>
+            <li><a id="menu_point_2" href="Aktienvergleich.html" style="color: rgb(200, 0, 0);">Aktienvergleich</a></li>
+            <li><a id="menu_point_3" href="Waehrungsumrechner.html">Währungsumrechner</a></li>
+            <li><a id="menu_point_5" href="Lernstube.html">Lernstube</a></li>
+            <li><a id="menu_point_4" href="Langeweile.html">Langeweile?</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <main>
+      <div class="website-framework">
+        <div class="website-middle">
+          <div id="introduction" align="center">
+            <h1>Aktienvergleich</h1><br>
+            <hr><br>
+            Hier können Sie Aktien ansehen, sie miteinander vergleichen und auswerten. <br>
+            Zusätzlich dazu können Sie unseren Währungsumrechner benutzen, um alles in Ihre gewünschte Währung umrechnen
+            lassen zu können. <br>
+            Wenn Sie Langeweile haben sollten, hilft vielleicht unser kleines Spiel dagegen. <br><br>
+            <hr><br><br>
+          </div>
+
+          <form action="">
+            <div class="container_dropdown_stock">
+              <div class="name_dropdown_stock">Kürzel der Aktien eingeben oder nach Aktien suchen</div>
             </div>
-            <nav class="menu">
-              <a href="#">Home</a>
-              <a href="#">Über uns</a>
-              <a href="#">Dienstleistungen</a>
-              <a href="#">Kontakt</a>
-            </nav>
+            <br><br>
+            <div class="container_dropdown_stock">
+              <div class="container2_dropdown_stock">
+                <div class="name_dropdown_stock">Aktie suchen:</div>
+                <input type="text" class="input_stock" id="output1_input" onkeyup="autoCompletion('output1')"
+                  placeholder="Suchen...">
+                <select class="stock_select" id="output1_select" size="5" onclick="setSelectedValue('output1')">
+                </select>
+              </div>
+              <div class="container2_dropdown_stock">
+                <div class="name_dropdown_stock">Kürzel eingeben:</div>
+                <input type="text" class="selectedValue" id="output1_value_stock">
+              </div>
+            </div>
+            <br><br>
+            <div class="container_dropdown_stock">
+              <div class="container2_dropdown_stock">
+                <div class="name_dropdown_stock">Aktie suchen:</div>
+                <input type="text" class="input_stock" id="output2_input" onkeyup="autoCompletion('output2')"
+                  placeholder="Suchen...">
+                <select class="stock_select" id="output2_select" size="5" onclick="setSelectedValue('output2')">
+                </select>
+              </div>
+              <div class="container2_dropdown_stock">
+                <div class="name_dropdown_stock">Kürzel eingeben:</div>
+                <input type="text" class="selectedValue" id="output2_value_stock">
+              </div>
+            </div>
+
+            <div class="container_dropdown_stock">
+              <input id="show_stock_chart" type="submit" value="Show Chart" />
+            </div>
+          </form>
+
+          <br><br><br>
+          <div id="container_table_stock_comparison">
+            <table id="myTable">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th id="stock1">Aktie 1</th>
+                  <th id="stock2">Aktie 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- get-analysis / price => regularMarketPrice -->
+                  <th>Aktueller Preis</th>
+                  <td id="stock1_content1">Inhalt 1</td>
+                  <td id="stock2_content1">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!--get-analysis / price => marketCap -->
+                  <th>Marktkapitalisierung</th>
+                  <td id="stock1_content2">Inhalt 1</td>
+                  <td id="stock2_content2">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!--get-analysis / indexTrend => peRatio -->
+                  <th>P/E-Ratio</th>
+                  <td id="stock1_content3">Inhalt 1</td>
+                  <td id="stock2_content3">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!--get-analysis / summaryDetail => priceToSalesTrailing12Months -->
+                  <th>P/S-Ratio</th>
+                  <td id="stock1_content4">Inhalt 1</td>
+                  <td id="stock2_content4">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-analysis / summaryDetail => trailingAnnualDividendRate -->
+                  <th>Jährliche Dividendenrate</th>
+                  <td id="stock1_content5">Inhalt 1</td>
+                  <td id="stock2_content5">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-options / defaultKeyStatistics => 52WeekChange -->
+                  <th>Performance 1 Jahr</th>
+                  <td id="stock1_content6">Inhalt 1</td>
+                  <td id="stock2_content6">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-options / defaultKeyStatistics => heldPercentInstitutions -->
+                  <th>Anteil Aktien bei finanziellen Einrichtungen</th>
+                  <td id="stock1_content7">Inhalt 1</td>
+                  <td id="stock2_content7">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-options / defaultKeyStatistics => profitMargins -->
+                  <th>Gewinnspanne</th>
+                  <td id="stock1_content8">Inhalt 1</td>
+                  <td id="stock2_content8">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-options / defaultKeyStatistics => enterpriseToEbitda -->
+                  <th>Enterprise Multiple</th>
+                  <td id="stock1_content9">Inhalt 1</td>
+                  <td id="stock2_content9">Inhalt 2</td>
+                </tr>
+                <tr>
+                  <!-- get-options / defaultKeyStatistics => sharesPercentSharesOut -->
+                  <th>Ausstehende Aktien (in %)</th>
+                  <td id="stock1_content10">Inhalt 1</td>
+                  <td id="stock2_content10">Inhalt 2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div id="root">
-            <header>
-                <div class="image-head">
-                    <div class="text-head">
-                        <img id="logo-head-left" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
-                        <div><a href="Startseite.html">Aktien-App</a></div>
-                        <img id="logo-head-right" src="stocks-graphic-for-business-stats.png" alt="Logo Aktienchart">
-                    </div>
-                        <nav class="nav_menu"> 
-                            <ul>
-                                <li><a id="menu_point_1" href="Aktienanalyse.html">Aktienanalyse</a></li>
-                                <li><a id="menu_point_2" href="Aktienvergleich.html" style="color: rgb(200, 0, 0);">Aktienvergleich</a></li>
-                                <li><a id="menu_point_3" href="Waehrungsumrechner.html">Währungsumrechner</a></li>
-                                <li><a id="menu_point_5" href="Lernstube.html">Lernstube</a></li>
-                                <li><a id="menu_point_4" href="Langeweile.html">Langeweile?</a></li>
-                            </ul>
-                        </nav>
 
-                </div>
-            </header>
+      </div>
 
-            <main>
-                <div class="website-framework">
-                    <div class="website-middle">
-                        <div id="introduction" align="center">
-                            <h1>Aktienvergleich</h1><br>
-                            <hr><br>
-                            Hier können Sie Aktien ansehen, sie miteinander vergleichen und auswerten. <br>
-                            Zusätzlich dazu können Sie unseren Währungsumrechner benutzen, um alles in Ihre gewünschte Währung umrechnen lassen zu können. <br>
-                            Wenn Sie Langeweile haben sollten, hilft vielleicht unser kleines Spiel dagegen. <br><br>
-                            <hr>
-                        </div>
-                        <div id="container_table_stock_comparison">
-                            <table border="1">
-                                <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>Überschrift 2</th>
-                                    <th>Überschrift 3</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th>Zeile 1</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 2</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 3</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 4</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 5</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 6</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 7</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 8</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 9</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Zeile 10</th>
-                                    <td>Inhalt 1</td>
-                                    <td>Inhalt 2</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                        </div>
-                    </div>
+      <div class="footer">
 
-                </div>
-
-                <div class="footer">
-
-                </div>
-            </main>
-        </div>
-        <script src="script.js"></script>
-    </body>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script src="aktienvergleich.js"></script>
+</body>
 
 </html>
