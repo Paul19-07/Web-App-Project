@@ -110,13 +110,13 @@
                                     <div class="container_dropdown_stock">
                                         <div class="container2_dropdown_stock">
                                             <div class="name_dropdown_stock">Aktie suchen:</div>
-                                            <input type="text" id="myInput" onkeyup="autoCompletion()" placeholder="Suchen...">
-                                            <select id="myDropdown" size="5" onclick="setSelectedValue()">
+                                            <input type="text" class="input_stock" id="output1_input" onkeyup="autoCompletion('output1')" placeholder="Suchen...">
+                                            <select class="stock_select" id="output1_select" size="5" onclick="setSelectedValue('output1')">
                                             </select>
                                         </div>
                                         <div class="container2_dropdown_stock">
                                             <div class="name_dropdown_stock">Kürzel eingeben:</div>
-                                            <input type="text" id="selectedValue">
+                                            <input type="text" class="selectedValue" id="output1_value_stock">
                                         </div>
                                     </div>
                                 </div>
@@ -132,11 +132,37 @@
 
                 </div>
 
-                <div class="footer">
 
-                    <div id="box1"></div>
-                </div>
             </main>
+            <footer>
+                <hr>
+                <div id="footer_pages_div">
+                    <ul id="footer_pages_ul">
+                        <li><a href="Impressum.html">Impressum</a></li>
+                        <li><a href="Ueber_uns.html">Über uns</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="Datenschutz">Datenschutz</a></li>
+                    </ul>
+                    <div id="footer_social_media_flexbox">
+                        <div class="footer_social_media">
+                            <div class="footer_social_media_name">Instagram</div>
+                            <img class="footer_social_media_image" src="https://cdn-icons-png.flaticon.com/512/87/87390.png">
+                        </div>
+                        <div class="footer_social_media">
+                            <div class="footer_social_media_name">Twitter</div>
+                            <img class="footer_social_media_image" src="https://cdn-icons-png.flaticon.com/512/81/81609.png">
+                        </div>
+                        <div class="footer_social_media">
+                            <div class="footer_social_media_name">YouTube</div>
+                            <img class="footer_social_media_image" src="https://cdn-icons-png.flaticon.com/512/48/48968.png">
+                        </div>
+                        <div class="footer_social_media">
+                            <div class="footer_social_media_name">LinkedIn</div>
+                            <img class="footer_social_media_image" src="https://cdn-icons-png.flaticon.com/512/49/49656.png">
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
         <script src="script.js"></script>
         <script src="aktienanalyse.js"></script>

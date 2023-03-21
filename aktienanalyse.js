@@ -1,89 +1,80 @@
-function filterFunction() {
-  var input, filter, dropdown, options, i, count;
-  input = document.getElementById("myInput");
+function filterFunction(outputID) {
+
+  var input, filter, dropdown, options, count;
+  input = document.getElementById(outputID + "_input");
   filter = input.value.toUpperCase();
-  dropdown = document.getElementById("myDropdown");
+  dropdown = document.getElementById(outputID + "_select");
   options = dropdown.getElementsByTagName("option");
   count = 0;
-  for (i = 0; i < options.length; i++) {
-    if (options[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      options[i].style.display = "block";
-      count++;
-    } else {
-      options[i].style.display = "none";
-    }
 
-  }
-  if (count > 0) {
-    dropdown.classList.add("show");
-  } else if (count === 0) {
-    dropdown.innerHTML = '<option disabled>Lädt...</option>'
-  }
 
-  if (input.value === "") {
-    dropdown.classList.remove("show")
+  console.log("HII " + options.length)
+  if (options.length == 0) {
+      dropdown.innerHTML = '<option disabled>Keine Einträge gefunden</option>'
   }
+  // } else if (count == 0) {
+  //   dropdown.innerHTML = '<option disabled>Keine Einträge gefunden</option>'
+  // }
+
 
 
 }
 
-function setSelectedValue() {
+function setSelectedValue(outputID) {
   var dropdown, selectedValueInput, input;
-  dropdown = document.getElementById("myDropdown");
-  input = document.getElementById("myInput");
-  selectedValueInput = document.getElementById("selectedValue");
+  dropdown = document.getElementById(outputID + "_select");
+  input = document.getElementById(outputID + "_input");
+  selectedValueInput = document.getElementById(outputID + "_value_stock");
   selectedValueInput.value = dropdown.value;
   dropdown.classList.remove("show");
-  input.value="";
+  input.value = "";
 
 }
 
 
 const options = {
-	method: 'GET',
-	headers: {
-    'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
-    'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-	}
+  method: 'GET',
+  headers: {
+      'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
+      'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+  }
 };
 
 const inputElement = document.getElementById("")
 
-function processResults(response) {
+
+function processResults(response, outputID) {
   var result = ""
   response.quotes.forEach(quote => {
-
       result += '<option value="' + quote.symbol + '">' + quote.shortname + '</option>'
-    }
-  );
-  document.getElementById("myDropdown").innerHTML = result
+  });
+  document.getElementById(outputID + "_select").innerHTML = result
+  filterFunction(outputID)
 }
 
-function autoCompletion() {
 
-
+function autoCompletion(outputID) {
   const options2 = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
-      'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-    }
+      method: 'GET',
+      headers: {
+          'X-RapidAPI-Key': '43ff4c0785msh7f17e4fc76bcaa7p1bd575jsn291a4f407afa',
+          'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+      }
   };
-input = document.getElementById("myInput").value;
-document.getElementById("myDropdown").innerHTML = '<option disabled>Lädt...</option>'
+  input = document.getElementById(outputID + "_input").value;
 
-fetch(`https://yh-finance.p.rapidapi.com/auto-complete?q=${input}`, options2)
-	.then(response => response.json())
-	.then(response => processResults(response))
-	.catch(err => console.error(err));
-
-  filterFunction()
-
-
+  if (input == "") {
+      document.getElementById(outputID + "_select").classList.remove("show")
+  } else {
+      document.getElementById(outputID + "_select").classList.add("show")
+      document.getElementById(outputID + "_select").innerHTML = '<option disabled>Lädt...</option>'
+      fetch(`https://yh-finance.p.rapidapi.com/auto-complete?q=${input}`, options2)
+          .then(response => response.json())
+          .then(response => processResults(response, outputID))
+          .catch(err => console.error(err));
+  }
 
 }
-
-
 
 
 
@@ -99,7 +90,7 @@ document.querySelector("form").onsubmit = () => {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  var stockSymbol = document.getElementById("selectedValue").value;
+  var stockSymbol = document.getElementById("output1_value_stock").value;
   console.log(stockSymbol)
 
   var range = document.getElementById("stock_range").value

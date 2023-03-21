@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 var annualDividendsStock1 = response.summaryDetail.trailingAnnualDividendRate.fmt
                 var zelle = myTable.rows[5].cells[1]
-                zelle.innerHTML = annualDividendsStock1
+                zelle.innerHTML = annualDividendsStock1 + "%"
 
             })
 
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 var annualDividendsStock1 = response.summaryDetail.trailingAnnualDividendRate.fmt
                 var zelle = myTable.rows[5].cells[2]
-                zelle.innerHTML = annualDividendsStock1
+                zelle.innerHTML = annualDividendsStock1 + "%"
 
             })
 
