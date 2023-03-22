@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         var myTable = document.getElementById("myTable")
         console.log(myTable)
 
+        myTable.classList.add("show")
+
         var stock1 = document.getElementById("stock1")
         var stock2 = document.getElementById("stock2")
 

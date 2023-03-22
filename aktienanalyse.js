@@ -88,6 +88,8 @@ document.querySelector("form").onsubmit = () => {
   var canvas = document.getElementById("stock_chart_canvas");
   var ctx = canvas.getContext("2d");
 
+  canvas.classList.add("show")
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   var stockSymbol = document.getElementById("output1_value_stock").value;

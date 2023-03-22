@@ -450,7 +450,7 @@
     filter: invert(80%)
   }
 
-  canvas {
+  #canvas {
     height: 600px;
     width: 600px;
     border: 1px solid #ccc;
@@ -463,7 +463,7 @@
     width: 1200px;
   }
 
-  #highscore {
+  .highscore {
     font-size: 30px;
   }
 
@@ -558,10 +558,16 @@
   }
 
   #stock_chart_canvas {
+    display: none;
     border: 2px solid black;
     height: 700px;
     width: 1200px;
   }
+
+  #stock_chart_canvas.show {
+    display: block;
+  }
+
 
   #show_stock_chart {
     width: 310px;
@@ -577,9 +583,14 @@
     cursor: pointer;
   }
 
-  table {
+  #myTable {
+    display: none;
     border-collapse: collapse;
     margin: 0 auto;
+}
+
+#myTable.show {
+  display: block;
 }
 
 th, td {
@@ -608,6 +619,26 @@ table tr:first-child * {
 table tbody tr:last-child * {
     border-bottom: none;
 }
+
+#game-canvas {
+  border: 1px solid white;
+}
+
+.button_game {
+width: 250px;
+height: 50px;
+font-size: 30px;
+border-radius: 20px;
+background-color: #696969;
+border: 2px solid rgb(0, 0, 0);
+align-self: center;
+cursor: pointer;
+}
+
+.button_game:hover {
+  background-color: #777777;
+}
+
 
 
 }
