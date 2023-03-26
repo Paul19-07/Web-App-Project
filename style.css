@@ -139,6 +139,7 @@
     font-size: 20px;
     line-height: 1.8;
     text-align: start;
+    width: 95vw;
   }
   
   .website-framework {
@@ -253,7 +254,7 @@
     border-radius: 10px;
     font-weight: bold;
     font-size: 30px;
-    width: 495px;
+    width: 400px;
     height: 55px;
     font-size: 30px;
     border-radius: 10px;
@@ -266,7 +267,7 @@
   }
   
   .local_foreign_curreny_dropdown_menu {
-    width: 495px;
+    width: 400px;
     height: 55px;
     font-size: 30px;
     border-radius: 10px;
@@ -294,7 +295,7 @@
   #results {
     color: black;
     font-weight: bold;
-    width: 700px;
+    width: 400px;
     height: 55px;
     font-size: 45px;
     border-radius: 10px;
@@ -331,10 +332,12 @@
     flex-direction: column;
     width: 100%;
     margin-bottom: 30px;
+    font-size: 15px;
   }
   
   #alphabet ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
     list-style: none;
@@ -343,6 +346,7 @@
   }
   
   #alphabet li {
+    flex: 0 0 5.5%;
     margin-bottom: 10px;
     margin-right: 5px;
     margin-left: 5px;
@@ -379,7 +383,7 @@
   #content a {
     display: flex;
     justify-content: space-between;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 10px;
     text-align: start;
     text-decoration: none;
@@ -394,12 +398,14 @@
     display: none;
     font-size: 20px;
     margin-top: 30px;
+    line-height: 1.5;
   }
   
   .term-title {
     font-weight: bold;
     cursor: pointer;
   }
+
 
   .term a span {
     margin-right: 10px;
@@ -459,16 +465,15 @@
   }
 
   #canvas {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     border: 1px solid #ccc;
+    align-items: center;
   }
 
   #snake_flexbox {
     display: flex;
     justify-content: center;
-    height: 600px;
-    width: 1200px;
   }
 
   .highscore {
@@ -513,8 +518,10 @@
 
   .container_dropdown_stock {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    width: 95vw;
     margin-bottom: 20px;
   }
 
@@ -547,6 +554,7 @@
     border-radius: 10px;
     background-color: #777777;
     border: 5px solid rgb(94, 94, 94);
+    margin-bottom: 20px;
   }
 
   .input_stock::placeholder {
@@ -566,10 +574,12 @@
   }
 
   #stock_chart_canvas {
+    align-self: center;
     display: none;
     border: 2px solid black;
-    height: 700px;
-    width: 1200px;
+    height: 500px;
+    width: 700px;
+
   }
 
   #stock_chart_canvas.show {
@@ -747,6 +757,25 @@ cursor: pointer;
     width: 30px;
   }
 
+  .local_foreign_curreny_dropdown_menu {
+    width: 495px;
+    height: 55px;
+  }
+  #amount_currency {
+  width: 495px;
+  height: 55px;
+  }
+
+  #results {
+    width: 700px;
+    height: 55px;
+  }
+
+  #canvas {
+    height: 500px;
+    width: 500px;
+  }
+
   header {
     position: relative;
   }
@@ -851,6 +880,10 @@ cursor: pointer;
     height: 400px;
   }
 
+  #alphabet li {
+    flex: 0 0 0;
+  }
+
 }
 
 
@@ -949,11 +982,19 @@ cursor: pointer;
     width: 1200px;
   }
 
+  #introduction {
+    width: 1200px;
+  }
+
   .website-middle-startseite {
     width: 1200px;
   }
 
   .container {
+    width: 1200px;
+  }
+
+  .container_dropdown_stock {
     width: 1200px;
   }
 
@@ -963,6 +1004,15 @@ cursor: pointer;
 
   .text-website-middle-startseite {
     width: 580px;
+  }
+
+  #stock_chart_canvas {
+  height: 700px;
+  width: 1200px;
+  }
+
+  #alphabet {
+    font-size: 20px;
   }
 
 }
